@@ -1,5 +1,88 @@
 {
     "3D": {
+        "HamiltonGerlach": {
+            "name": "HamiltonGerlach",
+            "sources": {
+                "AudioEffectStutter": {
+                    "branch": "main",
+                    "name": "AudioEffectStutter",
+                    "path": "3D/HamiltonGerlach/AudioEffectStutter",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/AudioEffectStutter.git"
+                },
+                "CPJaguarCoverPlate": {
+                    "branch": "main",
+                    "name": "CPJaguarCoverPlate",
+                    "path": "3D/HamiltonGerlach/CPJaguarCoverPlate",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/CPJaguarCoverPlate.git"
+                },
+                "DeathCoil": {
+                    "branch": "master",
+                    "name": "DeathCoil",
+                    "path": "3D/HamiltonGerlach/DeathCoil",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/DeathCoil.git"
+                },
+                "Dreambot": {
+                    "branch": "master",
+                    "name": "Dreambot",
+                    "path": "3D/HamiltonGerlach/Dreambot",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/Dreambot.git"
+                },
+                "EyeOfHorus": {
+                    "branch": "master",
+                    "name": "EyeOfHorus",
+                    "path": "3D/HamiltonGerlach/EyeOfHorus",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/EyeOfHorus.git"
+                },
+                "HarmonicPercolator": {
+                    "branch": "main",
+                    "name": "HarmonicPercolator",
+                    "path": "3D/HamiltonGerlach/HarmonicPercolator",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/HarmonicPercolator.git"
+                },
+                "Heartbeat": {
+                    "branch": "main",
+                    "name": "Heartbeat",
+                    "path": "3D/HamiltonGerlach/Heartbeat",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/Heartbeat.git"
+                },
+                "LavenderScripts": {
+                    "branch": "main",
+                    "name": "LavenderScripts",
+                    "path": "3D/HamiltonGerlach/LavenderScripts",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/LavenderScripts.git"
+                },
+                "MultiStompController": {
+                    "branch": "master",
+                    "name": "MultiStompController",
+                    "path": "3D/HamiltonGerlach/MultiStompController",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/MultiStompController.git"
+                },
+                "MultiStompSwitcher": {
+                    "branch": "master",
+                    "name": "MultiStompSwitcher",
+                    "path": "3D/HamiltonGerlach/MultiStompSwitcher",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/MultiStompSwitcher.git"
+                },
+                "SpiritGuide": {
+                    "branch": "main",
+                    "name": "SpiritGuide",
+                    "path": "3D/HamiltonGerlach/SpiritGuide",
+                    "type": "git",
+                    "url": "https://github.com/HamiltonGerlach/SpiritGuide.git"
+                }
+            },
+            "url": "https://github.com/HamiltonGerlach"
+        },
         "jfedor2": {
             "name": "jfedor2",
             "sources": {
@@ -7319,6 +7402,26 @@
             },
             "url": "https://github.com/GTAmodding"
         },
+        "HarbourMasters": {
+            "name": "HarbourMasters",
+            "sources": {
+                "Shipwright": {
+                    "branch": "develop-zhora",
+                    "name": "Shipwright",
+                    "path": "games/HarbourMasters/Shipwright",
+                    "type": "git",
+                    "url": "https://github.com/HarbourMasters/Shipwright.git"
+                },
+                "rando-issue-tracker": {
+                    "branch": "code",
+                    "name": "rando-issue-tracker",
+                    "path": "games/HarbourMasters/rando-issue-tracker",
+                    "type": "git",
+                    "url": "https://github.com/HarbourMasters/rando-issue-tracker.git"
+                }
+            },
+            "url": "https://github.com/HarbourMasters"
+        },
         "Jays2Kings": {
             "name": "Jays2Kings",
             "sources": {
@@ -8291,6 +8394,26 @@
                 }
             },
             "url": "https://github.com/sm64pc"
+        },
+        "snesrev": {
+            "name": "snesrev",
+            "sources": {
+                "jpdasm": {
+                    "branch": "master",
+                    "name": "jpdasm",
+                    "path": "games/snesrev/jpdasm",
+                    "type": "git",
+                    "url": "https://github.com/snesrev/jpdasm.git"
+                },
+                "zelda3": {
+                    "branch": "master",
+                    "name": "zelda3",
+                    "path": "games/snesrev/zelda3",
+                    "type": "git",
+                    "url": "https://github.com/snesrev/zelda3.git"
+                }
+            },
+            "url": "https://github.com/snesrev"
         },
         "td512": {
             "name": "td512",
@@ -9657,6 +9780,136 @@
                 "name": "tge",
                 "path": "emulators/GameHackFan/tge",
                 "source_url": "https://github.com/GameHackFan/tge.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/AudioEffectStutter.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "AudioEffectStutter",
+                "path": "3D/HamiltonGerlach/AudioEffectStutter",
+                "source_url": "https://github.com/HamiltonGerlach/AudioEffectStutter.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/CPJaguarCoverPlate.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "CPJaguarCoverPlate",
+                "path": "3D/HamiltonGerlach/CPJaguarCoverPlate",
+                "source_url": "https://github.com/HamiltonGerlach/CPJaguarCoverPlate.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/DeathCoil.git": {
+                "app_type": "3D",
+                "branch": "master",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "DeathCoil",
+                "path": "3D/HamiltonGerlach/DeathCoil",
+                "source_url": "https://github.com/HamiltonGerlach/DeathCoil.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/Dreambot.git": {
+                "app_type": "3D",
+                "branch": "master",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "Dreambot",
+                "path": "3D/HamiltonGerlach/Dreambot",
+                "source_url": "https://github.com/HamiltonGerlach/Dreambot.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/EyeOfHorus.git": {
+                "app_type": "3D",
+                "branch": "master",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "EyeOfHorus",
+                "path": "3D/HamiltonGerlach/EyeOfHorus",
+                "source_url": "https://github.com/HamiltonGerlach/EyeOfHorus.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/HarmonicPercolator.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "HarmonicPercolator",
+                "path": "3D/HamiltonGerlach/HarmonicPercolator",
+                "source_url": "https://github.com/HamiltonGerlach/HarmonicPercolator.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/Heartbeat.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "Heartbeat",
+                "path": "3D/HamiltonGerlach/Heartbeat",
+                "source_url": "https://github.com/HamiltonGerlach/Heartbeat.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/LavenderScripts.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "LavenderScripts",
+                "path": "3D/HamiltonGerlach/LavenderScripts",
+                "source_url": "https://github.com/HamiltonGerlach/LavenderScripts.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/MultiStompController.git": {
+                "app_type": "3D",
+                "branch": "master",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "MultiStompController",
+                "path": "3D/HamiltonGerlach/MultiStompController",
+                "source_url": "https://github.com/HamiltonGerlach/MultiStompController.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/MultiStompSwitcher.git": {
+                "app_type": "3D",
+                "branch": "master",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "MultiStompSwitcher",
+                "path": "3D/HamiltonGerlach/MultiStompSwitcher",
+                "source_url": "https://github.com/HamiltonGerlach/MultiStompSwitcher.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HamiltonGerlach/SpiritGuide.git": {
+                "app_type": "3D",
+                "branch": "main",
+                "developer": "HamiltonGerlach",
+                "developer_url": "https://github.com/HamiltonGerlach",
+                "name": "SpiritGuide",
+                "path": "3D/HamiltonGerlach/SpiritGuide",
+                "source_url": "https://github.com/HamiltonGerlach/SpiritGuide.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HarbourMasters/Shipwright.git": {
+                "app_type": "games",
+                "branch": "develop-zhora",
+                "developer": "HarbourMasters",
+                "developer_url": "https://github.com/HarbourMasters",
+                "name": "Shipwright",
+                "path": "games/HarbourMasters/Shipwright",
+                "source_url": "https://github.com/HarbourMasters/Shipwright.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/HarbourMasters/rando-issue-tracker.git": {
+                "app_type": "games",
+                "branch": "code",
+                "developer": "HarbourMasters",
+                "developer_url": "https://github.com/HarbourMasters",
+                "name": "rando-issue-tracker",
+                "path": "games/HarbourMasters/rando-issue-tracker",
+                "source_url": "https://github.com/HarbourMasters/rando-issue-tracker.git",
                 "source_url_type": "git"
             },
             "https://github.com/Igglybuff/awesome-piracy.git": {
@@ -18160,6 +18413,26 @@
                 "name": "snes9x",
                 "path": "emulators/snes9xgit/snes9x",
                 "source_url": "https://github.com/snes9xgit/snes9x.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/snesrev/jpdasm.git": {
+                "app_type": "games",
+                "branch": "master",
+                "developer": "snesrev",
+                "developer_url": "https://github.com/snesrev",
+                "name": "jpdasm",
+                "path": "games/snesrev/jpdasm",
+                "source_url": "https://github.com/snesrev/jpdasm.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/snesrev/zelda3.git": {
+                "app_type": "games",
+                "branch": "master",
+                "developer": "snesrev",
+                "developer_url": "https://github.com/snesrev",
+                "name": "zelda3",
+                "path": "games/snesrev/zelda3",
+                "source_url": "https://github.com/snesrev/zelda3.git",
                 "source_url_type": "git"
             },
             "https://github.com/sputt/wabbitemu.git": {
