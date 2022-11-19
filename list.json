@@ -974,6 +974,18 @@
             },
             "url": "https://github.com/kike-canaries"
         },
+        "revcx": {
+            "name": "revcx",
+            "sources": {
+                "revc": {
+                    "name": "revc",
+                    "path": "apps/revcx/revc",
+                    "type": "git",
+                    "url": "https://github.com/revcx/revc.git"
+                }
+            },
+            "url": "https://github.com/revcx"
+        },
         "yt-dlp": {
             "name": "yt-dlp",
             "sources": {
@@ -1238,7 +1250,7 @@
                     "source_rename_to": "WinArcadia-src-{version}.rar",
                     "type": "direct",
                     "url": "http://amigan.1emu.net/releases/WinArcadia-src.rar",
-                    "version": "29.1"
+                    "version": "29.11"
                 }
             },
             "url": "http://amigan.yatho.com"
@@ -1501,13 +1513,6 @@
                     "type": "git",
                     "url": "https://github.com/DirtBagXon/bravia-youview-player-launchers.git"
                 },
-                "daphne": {
-                    "branch": "master",
-                    "name": "daphne",
-                    "path": "emulators/DirtBagXon/daphne",
-                    "type": "git",
-                    "url": "https://github.com/DirtBagXon/daphne.git"
-                },
                 "dhewm3": {
                     "branch": "master",
                     "name": "dhewm3",
@@ -1697,7 +1702,7 @@
                     "path": "emulators/DotaJigokusai/xebra",
                     "type": "direct",
                     "url": "http://drhell.web.fc2.com/ps1/xebra{version}.zip",
-                    "version": "211031"
+                    "version": "220924"
                 }
             },
             "url": "http://drhell.web.fc2.com/ps1/index.html"
@@ -1813,7 +1818,7 @@
                     "path": "emulators/Mednafen/mednafen",
                     "type": "direct",
                     "url": "https://mednafen.github.io/releases/files/mednafen-{version}.tar.xz",
-                    "version": "1.26.1"
+                    "version": "1.29.0"
                 }
             },
             "url": "https://mednafen.github.io"
@@ -2083,6 +2088,13 @@
         "PhoenixInteractiveNL": {
             "name": "PhoenixInteractiveNL",
             "sources": {
+                "emuControlCenter": {
+                    "branch": "master",
+                    "name": "emuControlCenter",
+                    "path": "emulators/PhoenixInteractiveNL/emuControlCenter",
+                    "type": "git",
+                    "url": "https://github.com/PhoenixInteractiveNL/emuControlCenter.git"
+                },
                 "emuDownloadCenter": {
                     "branch": "master",
                     "name": "emuDownloadCenter",
@@ -2143,6 +2155,19 @@
                 }
             },
             "url": "https://github.com/Rakashazi"
+        },
+        "RandalLinden": {
+            "name": "RandalLinden",
+            "sources": {
+                "DOOM-FX": {
+                    "branch": "master",
+                    "name": "DOOM-FX",
+                    "path": "emulators/RandalLinden/DOOM-FX",
+                    "type": "git",
+                    "url": "https://github.com/RandalLinden/DOOM-FX.git"
+                }
+            },
+            "url": "https://github.com/RandalLinden"
         },
         "Robbbert": {
             "name": "Robbbert",
@@ -3242,7 +3267,7 @@
                     "path": "emulators/kitao/ootake",
                     "type": "direct",
                     "url": "https://www.ouma.jp/file/Ootake{version}.zip",
-                    "version": "301"
+                    "version": "304"
                 }
             },
             "url": "https://www.ouma.jp/ootake or https://www.ouma.jp/file/"
@@ -6923,8 +6948,8 @@
                     "name": "altirra",
                     "path": "emulators/virtualdub/altirra",
                     "type": "direct",
-                    "url": "http://www.virtualdub.org/downloads/Altirra-{version}-src.zip",
-                    "version": "3.90"
+                    "url": "http://www.virtualdub.org/downloads/Altirra-{version}-src.7z",
+                    "version": "4.01"
                 }
             },
             "url": "http://www.virtualdub.org/altirra.html"
@@ -8033,6 +8058,18 @@
             },
             "url": "https://github.com/nothke"
         },
+        "opensnc": {
+            "name": "opensnc",
+            "sources": {
+                "": {
+                    "name": "opensnc",
+                    "path": "games/opensnc/",
+                    "type": "svn",
+                    "url": "https://svn.code.sf.net/p/opensnc/code/"
+                }
+            },
+            "url": "https://svn.code.sf.net/p/opensnc/code/"
+        },
         "pret": {
             "name": "pret",
             "sources": {
@@ -8192,19 +8229,6 @@
                 }
             },
             "url": "https://github.com/pret"
-        },
-        "revcx": {
-            "name": "revcx",
-            "sources": {
-                "revc": {
-                    "branch": "master",
-                    "name": "revc",
-                    "path": "games/revcx/revc",
-                    "type": "git",
-                    "url": "https://github.com/revcx/revc.git"
-                }
-            },
-            "url": "https://github.com/revcx"
         },
         "rwengine": {
             "name": "rwengine",
@@ -8441,6 +8465,19 @@
             },
             "url": "https://github.com/teamsalta"
         },
+        "vaLinBSD": {
+            "name": "vaLinBSD",
+            "sources": {
+                "newraw": {
+                    "branch": "master",
+                    "name": "newraw",
+                    "path": "games/vaLinBSD/newraw",
+                    "type": "git",
+                    "url": "https://github.com/vaLinBSD/newraw.git"
+                }
+            },
+            "url": "https://github.com/vaLinBSD"
+        },
         "wizstriver1": {
             "name": "wizstriver1",
             "sources": {
@@ -8511,7 +8548,7 @@
                 "source_rename_to": "WinArcadia-src-{version}.rar",
                 "source_url": "http://amigan.1emu.net/releases/WinArcadia-src.rar",
                 "source_url_type": "direct",
-                "version": "29.1"
+                "version": "29.11"
             },
             "http://bgb.bircd.org/bgb.zip": {
                 "app_type": "emulators",
@@ -8538,7 +8575,7 @@
                 "path": "emulators/DotaJigokusai/xebra",
                 "source_url": "http://drhell.web.fc2.com/ps1/xebra{version}.zip",
                 "source_url_type": "direct",
-                "version": "211031"
+                "version": "220924"
             },
             "http://www.6809.org.uk/xroar/dl/xroar-{version}.tar.gz": {
                 "app_type": "emulators",
@@ -8559,7 +8596,7 @@
                 "source_url_type": "direct",
                 "version": "1.1"
             },
-            "http://www.virtualdub.org/downloads/Altirra-{version}-src.zip": {
+            "http://www.virtualdub.org/downloads/Altirra-{version}-src.7z": {
                 "app_type": "emulators",
                 "binaries": [
                     "http://www.virtualdub.org/downloads/Altirra-{version}.zip",
@@ -8569,9 +8606,9 @@
                 "developer_url": "http://www.virtualdub.org/altirra.html",
                 "name": "altirra",
                 "path": "emulators/virtualdub/altirra",
-                "source_url": "http://www.virtualdub.org/downloads/Altirra-{version}-src.zip",
+                "source_url": "http://www.virtualdub.org/downloads/Altirra-{version}-src.7z",
                 "source_url_type": "direct",
-                "version": "3.90"
+                "version": "4.01"
             },
             "http://www.zeldaroth.fr/us/files/3T/Windows/Zelda3T_US-src-windows.zip": {
                 "app_type": "games",
@@ -9261,16 +9298,6 @@
                 "name": "bravia-youview-player-launchers",
                 "path": "emulators/DirtBagXon/bravia-youview-player-launchers",
                 "source_url": "https://github.com/DirtBagXon/bravia-youview-player-launchers.git",
-                "source_url_type": "git"
-            },
-            "https://github.com/DirtBagXon/daphne.git": {
-                "app_type": "emulators",
-                "branch": "master",
-                "developer": "DirtBagXon",
-                "developer_url": "https://github.com/DirtBagXon",
-                "name": "daphne",
-                "path": "emulators/DirtBagXon/daphne",
-                "source_url": "https://github.com/DirtBagXon/daphne.git",
                 "source_url_type": "git"
             },
             "https://github.com/DirtBagXon/dhewm3.git": {
@@ -10882,6 +10909,16 @@
                 "source_url": "https://github.com/PCSX2/pcsx2.git",
                 "source_url_type": "git"
             },
+            "https://github.com/PhoenixInteractiveNL/emuControlCenter.git": {
+                "app_type": "emulators",
+                "branch": "master",
+                "developer": "PhoenixInteractiveNL",
+                "developer_url": "https://github.com/PhoenixInteractiveNL",
+                "name": "emuControlCenter",
+                "path": "emulators/PhoenixInteractiveNL/emuControlCenter",
+                "source_url": "https://github.com/PhoenixInteractiveNL/emuControlCenter.git",
+                "source_url_type": "git"
+            },
             "https://github.com/PhoenixInteractiveNL/emuDownloadCenter.git": {
                 "app_type": "emulators",
                 "branch": "master",
@@ -10920,6 +10957,16 @@
                 "name": "emu-ex-plus-alpha",
                 "path": "emulators/Rakashazi/emu-ex-plus-alpha",
                 "source_url": "https://github.com/Rakashazi/emu-ex-plus-alpha.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/RandalLinden/DOOM-FX.git": {
+                "app_type": "emulators",
+                "branch": "master",
+                "developer": "RandalLinden",
+                "developer_url": "https://github.com/RandalLinden",
+                "name": "DOOM-FX",
+                "path": "emulators/RandalLinden/DOOM-FX",
+                "source_url": "https://github.com/RandalLinden/DOOM-FX.git",
                 "source_url_type": "git"
             },
             "https://github.com/Robbbert/hbmame.git": {
@@ -18146,12 +18193,11 @@
                 "source_url_type": "git"
             },
             "https://github.com/revcx/revc.git": {
-                "app_type": "games",
-                "branch": "master",
+                "app_type": "apps",
                 "developer": "revcx",
                 "developer_url": "https://github.com/revcx",
                 "name": "revc",
-                "path": "games/revcx/revc",
+                "path": "apps/revcx/revc",
                 "source_url": "https://github.com/revcx/revc.git",
                 "source_url_type": "git"
             },
@@ -18755,6 +18801,16 @@
                 "source_url": "https://github.com/tzlion/hhugboy.git",
                 "source_url_type": "git"
             },
+            "https://github.com/vaLinBSD/newraw.git": {
+                "app_type": "games",
+                "branch": "master",
+                "developer": "vaLinBSD",
+                "developer_url": "https://github.com/vaLinBSD",
+                "name": "newraw",
+                "path": "games/vaLinBSD/newraw",
+                "source_url": "https://github.com/vaLinBSD/newraw.git",
+                "source_url_type": "git"
+            },
             "https://github.com/visualboyadvance-m/visualboyadvance-m.git": {
                 "app_type": "emulators",
                 "branch": "master",
@@ -19167,7 +19223,7 @@
                 "path": "emulators/Mednafen/mednafen",
                 "source_url": "https://mednafen.github.io/releases/files/mednafen-{version}.tar.xz",
                 "source_url_type": "direct",
-                "version": "1.26.1"
+                "version": "1.29.0"
             },
             "https://repo.or.cz/lsnes.git": {
                 "app_type": "emulators",
@@ -19195,6 +19251,15 @@
                 "name": "supermodel",
                 "path": "emulators/supermodel/supermodel",
                 "source_url": "https://svn.code.sf.net/p/model3emu/code",
+                "source_url_type": "svn"
+            },
+            "https://svn.code.sf.net/p/opensnc/code/": {
+                "app_type": "games",
+                "developer": "opensnc",
+                "developer_url": "https://svn.code.sf.net/p/opensnc/code/",
+                "name": "opensnc",
+                "path": "games/opensnc/",
+                "source_url": "https://svn.code.sf.net/p/opensnc/code/",
                 "source_url_type": "svn"
             },
             "https://svn.code.sf.net/p/pcsx-df/code": {
@@ -19256,7 +19321,7 @@
                 "path": "emulators/kitao/ootake",
                 "source_url": "https://www.ouma.jp/file/Ootake{version}.zip",
                 "source_url_type": "direct",
-                "version": "301"
+                "version": "304"
             }
         }
     }
