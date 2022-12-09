@@ -1,10 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import sys
 import os
 from datetime import datetime
 import sourceManager as sm
+import config
 from argparse import ArgumentParser
-
 
 def parse_args():
 

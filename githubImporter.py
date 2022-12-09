@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Import GitHub data.
 """
@@ -6,7 +6,7 @@ import os
 import argparse
 import requests
 from requests.auth import HTTPBasicAuth
-
+import config
 
 def parse_args():
     """

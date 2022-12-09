@@ -1250,7 +1250,7 @@
                     "source_rename_to": "WinArcadia-src-{version}.rar",
                     "type": "direct",
                     "url": "http://amigan.1emu.net/releases/WinArcadia-src.rar",
-                    "version": "29.11"
+                    "version": "29.32"
                 }
             },
             "url": "http://amigan.yatho.com"
@@ -3017,6 +3017,19 @@
                 }
             },
             "url": "https://github.com/finalburnneo"
+        },
+        "gbdev": {
+            "name": "gbdev",
+            "sources": {
+                "rgbds": {
+                    "branch": "master",
+                    "name": "rgbds",
+                    "path": "emulators/gbdev/rgbds",
+                    "type": "git",
+                    "url": "https://github.com/gbdev/rgbds.git"
+                }
+            },
+            "url": "https://github.com/gbdev"
         },
         "higan-emu": {
             "name": "higan-emu",
@@ -6570,6 +6583,19 @@
             },
             "url": "https://github.com/punesemu"
         },
+        "red-prig": {
+            "name": "red-prig",
+            "sources": {
+                "fpPS4": {
+                    "branch": "main",
+                    "name": "fpPS4",
+                    "path": "emulators/red-prig/fpPS4",
+                    "type": "git",
+                    "url": "https://github.com/red-prig/fpPS4.git"
+                }
+            },
+            "url": "https://github.com/red-prig"
+        },
         "reicast": {
             "name": "reicast",
             "sources": {
@@ -7319,13 +7345,6 @@
         "GTAmodding": {
             "name": "GTAmodding",
             "sources": {
-                "FramerateVigilante": {
-                    "branch": "master",
-                    "name": "FramerateVigilante",
-                    "path": "games/GTAmodding/FramerateVigilante",
-                    "type": "git",
-                    "url": "https://github.com/GTAmodding/FramerateVigilante.git"
-                },
                 "GTAIV-Issues-List": {
                     "branch": "master",
                     "name": "GTAIV-Issues-List",
@@ -8157,13 +8176,6 @@
                     "type": "git",
                     "url": "https://github.com/pret/pokemon-reverse-engineering-tools.git"
                 },
-                "pokepinball": {
-                    "branch": "master",
-                    "name": "pokepinball",
-                    "path": "games/pret/pokepinball",
-                    "type": "git",
-                    "url": "https://github.com/pret/pokepinball.git"
-                },
                 "pokepinballrs": {
                     "branch": "master",
                     "name": "pokepinballrs",
@@ -8205,13 +8217,6 @@
                     "path": "games/pret/pokestadium",
                     "type": "git",
                     "url": "https://github.com/pret/pokestadium.git"
-                },
-                "poketcg": {
-                    "branch": "master",
-                    "name": "poketcg",
-                    "path": "games/pret/poketcg",
-                    "type": "git",
-                    "url": "https://github.com/pret/poketcg.git"
                 },
                 "poketcg2": {
                     "branch": "master",
@@ -8548,7 +8553,7 @@
                 "source_rename_to": "WinArcadia-src-{version}.rar",
                 "source_url": "http://amigan.1emu.net/releases/WinArcadia-src.rar",
                 "source_url_type": "direct",
-                "version": "29.11"
+                "version": "29.32"
             },
             "http://bgb.bircd.org/bgb.zip": {
                 "app_type": "emulators",
@@ -9607,16 +9612,6 @@
                 "name": "AmnesiaTheDarkDescent",
                 "path": "games/FrictionalGames/AmnesiaTheDarkDescent",
                 "source_url": "https://github.com/FrictionalGames/AmnesiaTheDarkDescent.git",
-                "source_url_type": "git"
-            },
-            "https://github.com/GTAmodding/FramerateVigilante.git": {
-                "app_type": "games",
-                "branch": "master",
-                "developer": "GTAmodding",
-                "developer_url": "https://github.com/GTAmodding",
-                "name": "FramerateVigilante",
-                "path": "games/GTAmodding/FramerateVigilante",
-                "source_url": "https://github.com/GTAmodding/FramerateVigilante.git",
                 "source_url_type": "git"
             },
             "https://github.com/GTAmodding/GTAIV-Issues-List.git": {
@@ -12306,6 +12301,16 @@
                 "name": "devilution",
                 "path": "games/galaxyhaxz/devilution",
                 "source_url": "https://github.com/galaxyhaxz/devilution.git",
+                "source_url_type": "git"
+            },
+            "https://github.com/gbdev/rgbds.git": {
+                "app_type": "emulators",
+                "branch": "master",
+                "developer": "gbdev",
+                "developer_url": "https://github.com/gbdev",
+                "name": "rgbds",
+                "path": "emulators/gbdev/rgbds",
+                "source_url": "https://github.com/gbdev/rgbds.git",
                 "source_url_type": "git"
             },
             "https://github.com/ge-ku/AutoJoin-for-SteamGifts.git": {
@@ -17988,16 +17993,6 @@
                 "source_url": "https://github.com/pret/pokemon-reverse-engineering-tools.git",
                 "source_url_type": "git"
             },
-            "https://github.com/pret/pokepinball.git": {
-                "app_type": "games",
-                "branch": "master",
-                "developer": "pret",
-                "developer_url": "https://github.com/pret",
-                "name": "pokepinball",
-                "path": "games/pret/pokepinball",
-                "source_url": "https://github.com/pret/pokepinball.git",
-                "source_url_type": "git"
-            },
             "https://github.com/pret/pokepinballrs.git": {
                 "app_type": "games",
                 "branch": "master",
@@ -18056,16 +18051,6 @@
                 "name": "pokestadium",
                 "path": "games/pret/pokestadium",
                 "source_url": "https://github.com/pret/pokestadium.git",
-                "source_url_type": "git"
-            },
-            "https://github.com/pret/poketcg.git": {
-                "app_type": "games",
-                "branch": "master",
-                "developer": "pret",
-                "developer_url": "https://github.com/pret",
-                "name": "poketcg",
-                "path": "games/pret/poketcg",
-                "source_url": "https://github.com/pret/poketcg.git",
                 "source_url_type": "git"
             },
             "https://github.com/pret/poketcg2.git": {
@@ -18181,6 +18166,16 @@
                 "source_url": "https://github.com/quietust/nintendulator.git",
                 "source_url_type": "git",
                 "version": "0980"
+            },
+            "https://github.com/red-prig/fpPS4.git": {
+                "app_type": "emulators",
+                "branch": "main",
+                "developer": "red-prig",
+                "developer_url": "https://github.com/red-prig",
+                "name": "fpPS4",
+                "path": "emulators/red-prig/fpPS4",
+                "source_url": "https://github.com/red-prig/fpPS4.git",
+                "source_url_type": "git"
             },
             "https://github.com/reicast/reicast-emulator.git": {
                 "app_type": "emulators",

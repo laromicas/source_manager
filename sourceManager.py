@@ -1,13 +1,17 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import sys
-import json
 import os
+import json
 import multiprocessing
 import concurrent.futures
 from tabulate import tabulate
-import git
-
+# import git
+import config
 data = {}
+
+GIT_EXE = '/usr/bin/git'
+GIT_EXE = 'git.exe'
+
 
 # class Database(object):
 #     def __init__(self, file):
@@ -57,10 +61,10 @@ def loaddata(file, tryagain=True):
             raise
 
 
-class MyProgressPrinter(git.RemoteProgress):
-    def update(self, op_code, cur_count, max_count=None, message=''):
-        # print(op_code, cur_count, max_count, cur_count / (max_count or 100.0), message or "NO MESSAGE", end="")
-        print("\r%.2f%\r" % (cur_count * 100 / (max_count or 100.0)), end='\r', flush=True)
+# class MyProgressPrinter(git.RemoteProgress):
+#     def update(self, op_code, cur_count, max_count=None, message=''):
+#         # print(op_code, cur_count, max_count, cur_count / (max_count or 100.0), message or "NO MESSAGE", end="")
+#         print(f'\r{(cur_count * 100 / (max_count or 100.0)):.2f}%\r', end='\r', flush=True)
 
 
 def getdirs(path):
@@ -117,8 +121,8 @@ def direct_clone(url, fullpath):
         for key, value in urls[org_url].items():
             if isinstance(value, str):
                 url = url.replace('{' + key + '}', value)
-        command = 'cd %s; wget %s;' % (fullpath, url)
-        print('Cloning %s to %s' % (url, fullpath))
+        command = f'cd {fullpath}; wget {url};'
+        print(f'Cloning {url} to {fullpath}')
         os.system(command)
         if 'source_rename_to' in urls[org_url]:
             rename_to = urls[org_url]['source_rename_to']
@@ -128,7 +132,7 @@ def direct_clone(url, fullpath):
             filearray = url.split('/')
             filename = filearray[len(filearray) - 1]
             if filename != rename_to:
-                command = 'cd %s; mv %s %s;' % (fullpath, filename, rename_to)
+                command = f'cd {fullpath}; mv {filename} {rename_to};'
                 os.system(command)
 
 
@@ -148,35 +152,35 @@ def direct_fetch(url, fullpath):
             filearray = url.split('/')
             filename = filearray[len(filearray) - 1]
         if os.path.exists(fullpath + '/' + filename):
-            print('%s is already updated, go to %s to check for updates' % (filename, urls[org_url]['developer_url']))
+            print(f"{filename} is already updated, go to {urls[org_url]['developer_url']} to check for updates")
         else:
-            command = 'cd %s; wget %s;' % (fullpath, url)
-            print('Updating %s to %s' % (url, fullpath))
+            command = f'cd {fullpath}; wget {url};'
+            print(f'Updating {url} to {fullpath}')
             os.system(command)
             if 'source_rename_to' in urls[org_url]:
                 filearray = url.split('/')
                 filename = filearray[len(filearray) - 1]
                 if filename != rename_to:
-                    command = 'cd %s; mv %s %s;' % (fullpath, filename, rename_to)
+                    command = f'cd {fullpath}; mv {filename} {rename_to};'
                     os.system(command)
 
 
 def svn_clone(url, fullpath):
-    print('Cloning %s to %s' % (url, fullpath))
-    command = 'git svn clone %s %s;' % (url, fullpath)
+    print(f'Cloning {url} to {fullpath}')
+    command = f'git svn clone {url} {fullpath};'
     os.system(command)
 
 
 def svn_fetch(url, fullpath):
-    print('Fetching %s in %s' % (url, fullpath))
-    command = 'git svn clone %s %s;' % (url, fullpath)
-    command = 'cd %s; git svn fetch; git svn rebase;' % (fullpath)
+    print(f'Fetching {url} in {fullpath}')
+    command = f'git svn clone {url} {fullpath};'
+    command = f'cd {fullpath}; git svn fetch; git svn rebase;'
     os.system(command)
 
 
 def git_clone(url, fullpath):
     try:
-        print('Cloning %s to %s' % (url, fullpath))
+        print(f'Cloning {url} to {fullpath}')
         # repo = git.Repo.clone_from(url, fullpath, progress=MyProgressPrinter())
         repo = git.Repo.clone_from(url, fullpath)
         # repo = git.Repo(fullpath)
@@ -184,29 +188,28 @@ def git_clone(url, fullpath):
             remote.fetch('--tags')
             # remote.fetch('--all')
         branch = repo.active_branch.name
-        edit = 'branch=%s' % branch
+        edit = f'branch={branch}'
         editsource(url, [edit])
     except:
-        print('Error cloning %s to %s, Trying again...' % (url, fullpath))
+        print(f'Error cloning {url} to {fullpath}, Trying again...')
         basepath, devpath = getdirs(fullpath)
-        command = 'cd %s; git clone %s;' % (devpath, url)
+        command = f'cd {devpath}; {GIT_EXE} clone {url};'
         os.system(command)
         git_fetch(url)
 
 
 def git_fetch(url, fullpath):
-    print('Fetching %s in %s' % (url, fullpath))
+    print(f'Fetching {url} in {fullpath}')
     if os.path.exists(fullpath):
-        command = 'cd %s; git fetch --tags >/dev/null 2>&1;' % (fullpath)
+        command = f'cd {fullpath}; {GIT_EXE} fetch --tags >/dev/null 2>&1;'
         os.system(command)
-        command = 'cd %s; git fetch --all >/dev/null 2>&1; ' % (fullpath)
+        command = f'cd {fullpath}; {GIT_EXE} fetch --all >/dev/null 2>&1; '
         os.system(command)
-        command = 'cd %s; echo pulling %s && git pull --all;' % (
-            fullpath, fullpath)
+        command = f'cd {fullpath}; echo pulling {fullpath} && {GIT_EXE} pull --all;'
         os.system(command)
     # repo = git.Repo(fullpath)
     # branch = repo.active_branch.name
-    # edit = 'branch=%s' % branch
+    # edit = f'branch={%s}'
     # editsource(url, [edit])
 
 
@@ -331,6 +334,8 @@ def addsource(sourcetype, url, repotype=None, edits=[]):
     # if not sourcetype in data:
     #     data[sourcetype] = {}
 
+    if not sourcetype in data:
+        data[sourcetype] = {}
     if not developer in data[sourcetype]:
         print(f'Adding Developer {developer} in {sourcetype}')
         createDeveloper(data[sourcetype], developer, developerurl)
@@ -395,6 +400,8 @@ def normalize(source, developer, app_type='emulators'):
 def makeurlsindex():
     urls = {}
     for apptype in ['3D', 'apps', 'games', 'emulators']:
+        if apptype not in data:
+            data[apptype] = {}
         for developer in data[apptype].values():
             for source in developer['sources'].values():
                 if source['url'] not in urls:
@@ -416,7 +423,7 @@ def editsource(url, edits):
                 key, value = edit.split('=')
                 oldval = data[apptype][developer]['sources'][source].get(key)
                 if oldval != value:
-                    print('Changing value of %s (%s) from %s to %s' % (key, url, oldval, value))
+                    print(f'Changing value of {key} ({url}) from {oldval} to {value}')
                     data[apptype][developer]['sources'][source][key] = value
     savefile()
 
@@ -427,8 +434,8 @@ def main():
     try:
         data = loaddata('list.json')
     except:
-        print('Error loading data, data corrupted, all lost')
-        exit()
+        print('Error loading data, data corrupted or missing')
+        exit(1)
 
     command = sys.argv[1]
 
@@ -449,11 +456,17 @@ def main():
 
 def mainload():
     global data
-    try:
-        data = loaddata('list.json')
-    except:
-        print('Error loading data, data corrupted, all lost')
-        exit()
+    file = 'list.json'
+    if not os.path.exists(file) and file.endswith('.json') and 'init' not in sys.argv:
+        print(f'File not found: {file} in {os.getcwd()}')
+        print('Please run ./sourceManager.py init')
+        exit(1)
+    if 'init' not in sys.argv:
+        try:
+            data = loaddata(file)
+        except:
+            print('Error loading data, data corrupted, all lost')
+            exit()
 
 def command_reindex(args):  # pylint: disable=unused-argument
     savefile()
@@ -486,7 +499,8 @@ def command_list(args):
         print(url['name'])
 
 def command_createdirs(args): # pylint: disable=unused-argument
-    createdirs()
+    with open('list.json', 'r', encoding='utf-8') as data_file:
+        data = json.load(data_file)
 
 def command_delete(args):
     sourcetype = args.sourcetype
@@ -529,11 +543,18 @@ def command_move(args):
     movesource(folder, url)
     savefile()
 
+def command_init(args): # pylint: disable=unused-argument
+    with open('list.json', 'w', encoding='utf-8') as data_file:
+        data_file.write('{"indexes":{}}')
+
 def parse_args():
     from argparse import ArgumentParser
     parser = ArgumentParser(description='update Translated English datfiles')
 
     subparser = parser.add_subparsers(help='sub-command help')
+
+    parser_add = subparser.add_parser('init', help='Add repositories')
+    parser_add.set_defaults(func=command_init)
 
     parser_add = subparser.add_parser('add', help='Add repositories')
     parser_add.set_defaults(func=command_add)
@@ -591,6 +612,9 @@ def parse_args():
 
     args = parser.parse_args()
     # print(args)
+    if getattr(args, 'func', None) is None:
+        parser.print_help()
+        return
     args.func(args)
     # return args
 
