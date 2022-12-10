@@ -9,8 +9,8 @@ from tabulate import tabulate
 import config
 data = {}
 
-GIT_EXE = '/usr/bin/git'
 GIT_EXE = 'git.exe'
+GIT_EXE = '/usr/bin/git'
 
 
 # class Database(object):
@@ -20,31 +20,30 @@ GIT_EXE = 'git.exe'
 #         self.index = {}
 #         for key, value in self.data.items():
 #             self.index[value['name']] = key
-    # def get(self, name):
-    #     if name in self.index:
-    #         return self.data[self.index[name]]
-    #     else:
-    #         return None
-    # def set(self, name, value):
-    #     if name in self.index:
-    #         self.data[self.index[name]] = value
-    #     else:
-    #         self.data[name] = value
-    #         self.index[name] = name
-    # def save(self):
-    #     with open(self.file, 'w', encoding='utf-8') as json_file:
-    #         json.dump(self.data, json_file, indent=4)
-    # def getindex(self):
-    #     return self.index
-    # def getdata(self):
-    #     return self.data
-    # def getfile(self):
-    #     return self.file
-    # def getkeys(self):
-    #     return self.data.keys()
-    # def getvalues(self):
-    #     return self.data.values()
-
+# def get(self, name):
+#     if name in self.index:
+#         return self.data[self.index[name]]
+#     else:
+#         return None
+# def set(self, name, value):
+#     if name in self.index:
+#         self.data[self.index[name]] = value
+#     else:
+#         self.data[name] = value
+#         self.index[name] = name
+# def save(self):
+#     with open(self.file, 'w', encoding='utf-8') as json_file:
+#         json.dump(self.data, json_file, indent=4)
+# def getindex(self):
+#     return self.index
+# def getdata(self):
+#     return self.data
+# def getfile(self):
+#     return self.file
+# def getkeys(self):
+#     return self.data.keys()
+# def getvalues(self):
+#     return self.data.values()
 
 
 def loaddata(file, tryagain=True):
@@ -141,7 +140,8 @@ def direct_fetch(url, fullpath):
     if url in urls:
         org_url = url
         fullpath = urls[org_url]['path']
-        rename_to = urls[org_url]['source_rename_to'] if ('source_rename_to' in urls[org_url]) else ''
+        rename_to = urls[org_url]['source_rename_to'] if (
+            'source_rename_to' in urls[org_url]) else ''
         for key, value in urls[org_url].items():
             if isinstance(value, str):
                 url = url.replace('{' + key + '}', value)
@@ -152,7 +152,8 @@ def direct_fetch(url, fullpath):
             filearray = url.split('/')
             filename = filearray[len(filearray) - 1]
         if os.path.exists(fullpath + '/' + filename):
-            print(f"{filename} is already updated, go to {urls[org_url]['developer_url']} to check for updates")
+            print(
+                f"{filename} is already updated, go to {urls[org_url]['developer_url']} to check for updates")
         else:
             command = f'cd {fullpath}; wget {url};'
             print(f'Updating {url} to {fullpath}')
@@ -342,13 +343,15 @@ def addsource(sourcetype, url, repotype=None, edits=[]):
 
     if not source in data[sourcetype][developer]['sources']:
         print(f'Adding Repository {source} in {developer} ({sourcetype})')
-        createSource(data[sourcetype][developer]['sources'], developer, source, url, sourcetype, repotype, edits)
+        createSource(data[sourcetype][developer]['sources'],
+                     developer, source, url, sourcetype, repotype, edits)
 
 
 def deletesource(sourcetype, developer, source=None):
     if source and developer in data[sourcetype]:
         if source in data[sourcetype][developer]['sources']:
-            print(f'Deleting Repository {source} from {developer} ({sourcetype})')
+            print(
+                f'Deleting Repository {source} from {developer} ({sourcetype})')
             del(data[sourcetype][developer]['sources'][source])
 
     if developer in data[sourcetype] and len(data[sourcetype][developer]['sources']) == 0:
@@ -371,12 +374,12 @@ def movesource(sourcetype, url):
         addsource(sourcetype, url)
 
 
-
 def getindex(indextype, *filters):
     index = data['indexes'].get(indextype, {})
     for filtr in filters:
         key, value = filtr.split('=')
-        index = dict(filter(lambda elem: elem[1][key].lower() == value.lower(), index.items()))
+        index = dict(
+            filter(lambda elem: elem[1][key].lower() == value.lower(), index.items()))
     return index
 
 
@@ -389,7 +392,8 @@ def normalize(source, developer, app_type='emulators'):
         'developer_url': developer['url'],
         'app_type': app_type,
     }
-    more_keys = ['path', 'binary', 'binaries', 'version', 'branch', 'source_rename_to', 'binaries_rename_to']
+    more_keys = ['path', 'binary', 'binaries', 'version',
+                 'branch', 'source_rename_to', 'binaries_rename_to']
     for key in more_keys:
         if key in source:
             normalized[key] = source[key]
@@ -407,7 +411,8 @@ def makeurlsindex():
                 if source['url'] not in urls:
                     urls[source['url']] = normalize(source, developer, apptype)
                 else:
-                    urls[source['url']+'-copy'] = normalize(source, developer, apptype)
+                    urls[source['url'] +
+                         '-copy'] = normalize(source, developer, apptype)
     data['indexes'] = {}
     data['indexes']['urls'] = urls
 
@@ -423,7 +428,8 @@ def editsource(url, edits):
                 key, value = edit.split('=')
                 oldval = data[apptype][developer]['sources'][source].get(key)
                 if oldval != value:
-                    print(f'Changing value of {key} ({url}) from {oldval} to {value}')
+                    print(
+                        f'Changing value of {key} ({url}) from {oldval} to {value}')
                     data[apptype][developer]['sources'][source][key] = value
     savefile()
 
@@ -454,6 +460,7 @@ def main():
         for url in urls:
             editsource(url, edits)
 
+
 def mainload():
     global data
     file = 'list.json'
@@ -468,14 +475,17 @@ def mainload():
             print('Error loading data, data corrupted, all lost')
             exit()
 
+
 def command_reindex(args):  # pylint: disable=unused-argument
     savefile()
     print('Reindexed')
+
 
 def command_details(args):
     filters = args.filters
     urls = getindex('urls', *filters)
     print(tabulate(urls.values(), headers='keys', tablefmt='psql'))
+
 
 def command_fetch(args):
     filters = args.filters
@@ -486,11 +496,13 @@ def command_fetch(args):
         for url in urls:
             executor.submit(fetch, url)
 
+
 def command_clone(args):
     filters = args.filters
     urls = getindex('urls', *filters)
     for url in urls:
         clone(url)
+
 
 def command_list(args):
     filters = args.filters
@@ -498,9 +510,11 @@ def command_list(args):
     for url in urls.values():
         print(url['name'])
 
-def command_createdirs(args): # pylint: disable=unused-argument
+
+def command_createdirs(args):  # pylint: disable=unused-argument
     with open('list.json', 'r', encoding='utf-8') as data_file:
         data = json.load(data_file)
+
 
 def command_delete(args):
     sourcetype = args.sourcetype
@@ -524,6 +538,7 @@ def command_add(args):
     addsource(sourcetype, url, repotype, edits)
     savefile()
 
+
 def command_edit(args):
     url = args.url
     edits = args.filters
@@ -537,15 +552,18 @@ def command_edit(args):
 #         editsource(url, edits)
 #     savefile()
 
+
 def command_move(args):
     folder = args.to
     url = args.url
     movesource(folder, url)
     savefile()
 
-def command_init(args): # pylint: disable=unused-argument
+
+def command_init(args):  # pylint: disable=unused-argument
     with open('list.json', 'w', encoding='utf-8') as data_file:
         data_file.write('{"indexes":{}}')
+
 
 def parse_args():
     from argparse import ArgumentParser
@@ -568,16 +586,19 @@ def parse_args():
     parser_edit = subparser.add_parser('edit', help='Edit repositories')
     parser_edit.set_defaults(func=command_edit)
 
-    parser_details = subparser.add_parser('details', help='List details of repositories')
+    parser_details = subparser.add_parser(
+        'details', help='List details of repositories')
     parser_details.set_defaults(func=command_details)
 
     parser_list = subparser.add_parser('list', help='List repositories')
     parser_list.set_defaults(func=command_list)
 
-    parser_createdirs = subparser.add_parser('createdirs', help='Create directories')
+    parser_createdirs = subparser.add_parser(
+        'createdirs', help='Create directories')
     parser_createdirs.set_defaults(func=command_createdirs)
 
-    parser_reindex = subparser.add_parser('reindex', help='Reindex list of repositories')
+    parser_reindex = subparser.add_parser(
+        'reindex', help='Reindex list of repositories')
     parser_reindex.set_defaults(func=command_reindex)
 
     parser_fetch = subparser.add_parser('fetch', help='Git Fetch repositories')
@@ -586,19 +607,21 @@ def parse_args():
     parser_clone = subparser.add_parser('clone', help='Clone new repositories')
     parser_clone.set_defaults(func=command_clone)
 
-
     for parser_func in [parser_fetch]:
-        parser_func.add_argument('-w', '--workers', help='Number of workers to use (default to half core count)', type=int)
-
+        parser_func.add_argument(
+            '-w', '--workers', help='Number of workers to use (default to half core count)', type=int)
 
     for parser_func in [parser_add]:
-        parser_func.add_argument('-t', '--type', required=True, dest='sourcetype', help='Source type')
+        parser_func.add_argument(
+            '-t', '--type', required=True, dest='sourcetype', help='Source type')
         parser_func.add_argument('-u', '--url', required=True, help='Url')
         parser_func.add_argument('-r', '--repotype', help='Repository type')
 
     for parser_func in [parser_delete]:
-        parser_func.add_argument('-t', '--type', required=True, dest='sourcetype', help='Source type')
-        parser_func.add_argument('-d', '--developer', required=True, help='Developer')
+        parser_func.add_argument(
+            '-t', '--type', required=True, dest='sourcetype', help='Source type')
+        parser_func.add_argument(
+            '-d', '--developer', required=True, help='Developer')
         parser_func.add_argument('-s', '--source', help='Source')
 
     for parser_func in [parser_move, parser_edit]:
@@ -617,6 +640,7 @@ def parse_args():
         return
     args.func(args)
     # return args
+
 
 if __name__ == "__main__":
     # main()
